@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "ScrewYouFandom",
+  "version": "1.0",
+  "description": "Automatically redirects the old Minecraft Fandom to their new wiki.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "screwyoufandom.png",
+    "32": "screwyoufandom.png",
+    "48": "screwyoufandom.png",
+    "512": "screwyoufandom.png"
+  },
+  "background": {"service_worker": "bg.js"},
+  "content_scripts": [
+    {
+      "matches": ["*://minecraft.fandom.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
+
